@@ -57,10 +57,10 @@ while p < 20000:
             r2 += 8*p
         dict_of_primes_used[(p, F)] = used_primes
     p = p.next_prime()
-    print(p)
     if p > next_thousand:
         print(f"Done up to {p}")
         with open("output.txt", 'a') as outfile:
-            outfile.write(str(dict_of_primes_used))
+            for key, val in dict_of_primes_used.items():
+                outfile.write(f"p={key[0]}, F={key[1]}: {', '.join(map(str, val))}\n")
         dict_of_primes_used = {}
         next_thousand += 1000
