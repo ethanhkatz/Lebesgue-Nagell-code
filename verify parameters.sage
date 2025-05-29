@@ -12,19 +12,16 @@ def verify_parameters(p, y, Kp, L, R1, R2, mu, rho): # verifies Propositions 5.2
     C7 = (rho + 1) * (2 * log(sqrt(RBF(2)) + 1) + RBF(10)^(-50)) / p
     sigma = 1 - (1 - mu)**2 / 2
     K = ceil(Kp * log(y)) # lower bound for K
-    if not (C3 > 0 and C6 > 0):
+    if not (R2 <= (K - 1) * L + 1):
         print(f"Verification failed for {Integer(p)}")
         return False
     log_bu = log(C3 / K + C4) + RBF(1.5) # upper bound for log(b)
     gu = RBF(0.25) - C5 + C5 * C6 / (C6 + K) # upper bound for g
     N = K * L # lower bound for N
-    if not (N >= 3):
-        print(f"Verification failed for {Integer(p)}")
-        return False
     epsilonu = (3 * log(N) + log(2 * RBF.pi()) + 1 / (6 * N) + 2 * log(1 + (1 - RBF(-1).exp())**N)) / N # upper bound for epsilon
     C8 = Kp * (sigma * L - 1) * log(rho) - 2 * Kp * log_bu - gu * L * (2 * R + C2 * a2)
     C9 = 3 * log(L) + gu * L * (R * C7 + C1 * a2) + epsilonu
-    if not (C8 > 0 and log(y) > 3 / C8 - 1 / Kp):
+    if not (C3 > 0 and C6 > 0 and C8 > 0 and log(y) > 3 / C8 - 1 / Kp and N >= 3):
         print(f"Verification failed for {Integer(p)}")
         return False
 
