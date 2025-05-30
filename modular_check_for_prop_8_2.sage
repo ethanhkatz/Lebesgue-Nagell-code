@@ -12,7 +12,7 @@ print(F.coefficient(1093))
 
 #Check for part (2) of Proposition 8.2
 #For each prime 5 <= p < 5000, check that |a_p(F)|^2 is not 1 mod p
-P = prime_range(5,100)
+P = prime_range(5,5000)
 for p in P:
     coeff = F.coefficient(p)
     if Integer(mod(coeff^2,p)) == 1:
