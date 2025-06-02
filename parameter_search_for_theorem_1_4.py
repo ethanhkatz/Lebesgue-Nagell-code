@@ -105,7 +105,7 @@ def binary_search(func, start, end, delta=0.00001, sign_preference=True): # bina
 
 tlst1 = 2 * log(sqrt(2) + 1) # frequently used constant
 
-def eq_5_32_value(Kn, L, R1, R2, mun, verbose=False): # system for y = infinity
+def eq_5_37_value(Kn, L, R1, R2, mun, verbose=False): # system for y = infinity
   """
   p is a global variable representing the p in the equation x^2-2 = y^p
   Inputs:
@@ -115,7 +115,7 @@ def eq_5_32_value(Kn, L, R1, R2, mun, verbose=False): # system for y = infinity
     R2 - integer
     mun - integer, that is 100 times the value of mu, so that we can search on the integer values
   Behavior:
-    Returns smallest value of the quantity log(rho) mu L K' from equation (5.32)
+    Returns smallest value of the quantity log(rho) mu L K' from equation (5.37)
     with the given choices of K', L, R1, R2, mu
   """
   if Kn < 1 or L < 1 or R1 < 1 or R2 < 1:
@@ -129,7 +129,7 @@ def eq_5_32_value(Kn, L, R1, R2, mun, verbose=False): # system for y = infinity
   log_b = log(L * p / (2 * min(R2, p))) + 3/2
   g = 1/4 - min(R2, p) / (12 * R)
   sigma = (1 + 2 * mu - mu**2) / 2
-  # compute A, B, C so that constraint (5.18) is A log(rho) - B rho > C
+  # compute A, B, C so that constraint (5.36) is A log(rho) - B rho > C
   A = Kp * (sigma * L - 1)
   B = g * L * tlst1 * C2
   C = 2 * Kp * log_b + g * L * (2 * R + tlst1 * C2)
@@ -158,7 +158,7 @@ upper_limits = [1000000, 10000, 10000, 10000, 100]
 def test_p(p_):
   global p
   p = p_
-  Kn, L, R1, R2, mun = refined_search(eq_5_32_value, start, end, deltas, lower_limits, upper_limits)
-  return eq_5_32_value(Kn, L, R1, R2, mun) < p / 2
+  Kn, L, R1, R2, mun = refined_search(eq_5_37_value, start, end, deltas, lower_limits, upper_limits)
+  return eq_5_37_value(Kn, L, R1, R2, mun) < p / 2
 
 print(test_p(1832))

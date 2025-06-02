@@ -9,7 +9,7 @@ def refine(l, F):
         integer l congruent to 1 mod p and +/-1 mod 8.
         string F: one of the four Cremona labels in cremona_labels
     Behavior:
-        If l is a prime satisfying conditions 1-4 in Proposition 15.7.1, computes the set R_l(F),
+        If l is a prime satisfying conditions 1-4 in the proof of Theorem 5.3, computes the set R_l(F),
         and replaces current_set with its intersection with R_l(F) and appends l to used_primes
         if it makes current_set smaller.
     """
@@ -59,7 +59,7 @@ while p < 20000:
     p = p.next_prime()
     if p > next_thousand:
         print(f"Done up to {p}")
-        with open("output.txt", 'a') as outfile:
+        with open("theorem_5_3_primes.txt", 'a') as outfile:
             for key, val in dict_of_primes_used.items():
                 outfile.write(f"p={key[0]}, F={key[1]}: {', '.join(map(str, val))}\n")
         dict_of_primes_used = {}

@@ -1,4 +1,4 @@
-def verify_parameters(p, y, Kp, L, R1, R2, mu, rho): # verifies Propositions 5.25 and 5.26 with a given choice of parameters
+def verify_parameters(p, y, Kp, L, R1, R2, mu, rho): # verifies Propositions 5.26 and 5.27 with a given choice of parameters
     p, y, Kp, L, R1, R2, mu, rho = RBF(p), RBF(y), RBF(Kp), RBF(L), RBF(R1), RBF(R2), RBF(mu), RBF(rho)
     a2 = (rho + 1) * 2 * log(sqrt(RBF(2)) + 1)
     S1 = ceil(L / R1)
@@ -25,12 +25,12 @@ def verify_parameters(p, y, Kp, L, R1, R2, mu, rho): # verifies Propositions 5.2
         print(f"Verification failed for {Integer(p)}")
         return False
 
-    # proposition 5.25
+    # proposition 5.26
     if not (C8 * log(y) - 3 * log(Kp * log(y) + 1) > C9):
         print(f"Verification failed for {Integer(p)}")
         return False
 
-    # proposition 5.26
+    # proposition 5.27
     if not (C1 > 0):
         print(f"Verification failed for {Integer(p)}")
         return False
