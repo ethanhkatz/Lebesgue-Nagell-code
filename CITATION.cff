@@ -17,9 +17,10 @@ authors:
 identifiers:
   - type: url
     value: 'https://arxiv.org/abs/2507.12397'
-abstract: >-
+repository-code: 'https://github.com/ethanhkatz/Lebesgue-Nagell-code'
+abstract: |-
   This code is a supplement to the paper "On the
-  Lebesgue-Nagell equation x^2-2 = y^p"
+    Lebesgue-Nagell equation x^2-2 = y^p"
 keywords:
   - Number Theory
   - Lebesgue-Nagell Equation
