@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Lebesgue-Nagell Helper Code
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Ethan
+    family-names: Katz
+    email: ethanhkatz@gmail.com
+  - given-names: Kyle
+    family-names: Pratt
+    email: kyle.pratt@mathematics.byu.edu
+identifiers:
+  - type: url
+    value: 'https://arxiv.org/abs/2507.12397'
+abstract: >-
+  This code is a supplement to the paper "On the
+  Lebesgue-Nagell equation x^2-2 = y^p"
+keywords:
+  - Number Theory
+  - Lebesgue-Nagell Equation
